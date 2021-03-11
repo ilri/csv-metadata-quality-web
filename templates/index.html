@@ -1,13 +1,6 @@
 <!doctype html>
 <html lang="en" class="h-100">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Simple web interface for the DSpace CSV Metadata Quality tool.">
-    <meta name="author" content="Alan Orth">
-    <title>DSpace CSV Metadata Quality Checker</title>
-    <link href="{{ url_for('static', filename='css/style.min.css') }}" rel="stylesheet">
-  </head>
+  {% include 'head.html' %}
   <body class="d-flex flex-column h-100">
     <main class="flex-shrink-0">
       <div class="container">
@@ -21,10 +14,6 @@
       </div>
     </main>
 
-	<footer class="footer mt-auto py-3 bg-light">
-	  <div class="container">
-		<span class="text-muted">csv-metadata-quality v{{ cli_version }}</span>
-	  </div>
-	</footer>
+    {% include 'footer.html' %}
   </body>
 </html>
