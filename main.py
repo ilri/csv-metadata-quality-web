@@ -6,7 +6,7 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 1024 * 1024
 app.config["UPLOAD_EXTENSIONS"] = [".csv"]
-app.config["UPLOAD_PATH"] = "uploads"
+app.config["UPLOAD_PATH"] = "/tmp"
 
 
 @app.route("/")
@@ -23,12 +23,6 @@ def upload_file():
         file_ext = os.path.splitext(filename)[1]
         if file_ext not in app.config["UPLOAD_EXTENSIONS"]:
             abort(400)
-
-        # make sure the upload directory exists
-        try:
-            os.mkdir(app.config["UPLOAD_PATH"])
-        except FileExistsError:
-            pass
 
         uploaded_file.save(os.path.join(app.config["UPLOAD_PATH"], filename))
 
