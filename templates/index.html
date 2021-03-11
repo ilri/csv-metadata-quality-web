@@ -1,17 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CSV Metadata Quality Tool</title>
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <meta name="description" content="Simple web interface for the DSpace CSV Metadata Quality tool.">
+    <meta name="author" content="Alan Orth">
+    <title>DSpace CSV Metadata Quality Checker</title>
+    <link href="{{ url_for('static', filename='css/style.min.css') }}" rel="stylesheet">
   </head>
-  <body>
-    <h1>CSV Metadata Quality Tool</h1>
-    <p>Select a CSV file to process.</p>
-    <form method="POST" action="" enctype="multipart/form-data">
-      <p><input type="file" name="file" accept=".csv"></p>
-      <p><input type="submit" value="Submit"></p>
-    </form>
+  <body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+      <div class="container">
+        <h1 class="mt-5 fs-2">DSpace CSV Metadata Quality Checker</h1>
+        <p class="lead">The DSpace CSV Metadata Quality Checker is a pipeline of sanity checks and automated fixes for a number of common issues in metadata files.</p>
+        <p>Select a CSV file to process.</p>
+        <form method="POST" action="" enctype="multipart/form-data">
+          <p><input type="file" name="file" accept=".csv"></p>
+          <p><input type="submit" value="Submit"></p>
+        </form>
+      </div>
+    </main>
+
+	<footer class="footer mt-auto py-3 bg-light">
+	  <div class="container">
+		<span class="text-muted">csv-metadata-quality v{{ cli_version }}</span>
+	  </div>
+	</footer>
   </body>
 </html>
