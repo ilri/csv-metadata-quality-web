@@ -27,7 +27,14 @@ def upload_file():
 
         uploaded_file.save(os.path.join(app.config["UPLOAD_PATH"], filename))
 
-    return redirect(url_for("index"))
+        return redirect(url_for("process_file", filename=filename))
+
+    return "No file selected"
+
+
+@app.route("/process/<filename>")
+def process_file(filename):
+    return render_template("process.html", cli_version=cli_version, filename=filename)
 
 
 if __name__ == "__main__":
