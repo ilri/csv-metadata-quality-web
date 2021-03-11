@@ -78,7 +78,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "csv-metadata-quality"
-version = "0.4.6"
+version = "0.4.6-dev"
 description = "A simple, but opinionated CSV quality checking and fixing pipeline for CSVs in the DSpace ecosystem."
 category = "main"
 optional = false
@@ -99,8 +99,8 @@ xlrd = "^1.2.0"
 [package.source]
 type = "git"
 url = "https://github.com/ilri/csv-metadata-quality.git"
-reference = "6cc1401f88dc002f5a23aae064d5121fccb7d556"
-resolved_reference = "6cc1401f88dc002f5a23aae064d5121fccb7d556"
+reference = "fa84cfa440743ed40295f8c3cd98a27abe396ef2"
+resolved_reference = "fa84cfa440743ed40295f8c3cd98a27abe396ef2"
 
 [[package]]
 name = "decorator"
@@ -356,7 +356,7 @@ python-versions = "*"
 
 [[package]]
 name = "prompt-toolkit"
-version = "3.0.16"
+version = "3.0.17"
 description = "Library for building powerful interactive command lines in Python"
 category = "dev"
 optional = false
@@ -584,7 +584,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7.1"
-content-hash = "271f5d5377a87601ee64dbb37ac3c4ee16e8bd24bc56468528010d8810182290"
+content-hash = "b5422ce7e13c87c888889bf6826c779a6d0ba6a1d644d3fdf4c014f50efd2692"
 
 [metadata.files]
 appdirs = [
@@ -770,8 +770,8 @@ pickleshare = [
     {file = "pickleshare-0.7.5.tar.gz", hash = "sha256:87683d47965c1da65cdacaf31c8441d12b8044cdec9aca500cd78fc2c683afca"},
 ]
 prompt-toolkit = [
-    {file = "prompt_toolkit-3.0.16-py3-none-any.whl", hash = "sha256:62c811e46bd09130fb11ab759012a4ae385ce4fb2073442d1898867a824183bd"},
-    {file = "prompt_toolkit-3.0.16.tar.gz", hash = "sha256:0fa02fa80363844a4ab4b8d6891f62dd0645ba672723130423ca4037b80c1974"},
+    {file = "prompt_toolkit-3.0.17-py3-none-any.whl", hash = "sha256:4cea7d09e46723885cb8bc54678175453e5071e9449821dce6f017b1d1fbfc1a"},
+    {file = "prompt_toolkit-3.0.17.tar.gz", hash = "sha256:9397a7162cf45449147ad6042fa37983a081b8a73363a5253dd4072666333137"},
 ]
 ptyprocess = [
     {file = "ptyprocess-0.7.0-py2.py3-none-any.whl", hash = "sha256:4b41f3967fce3af57cc7e94b888626c18bf37a083e3651ca8feeb66d492fef35"},
