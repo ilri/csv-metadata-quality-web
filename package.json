@@ -1,0 +1,17 @@
+{
+  "name": "csv-metadata-quality-web",
+  "version": "0.0.1",
+  "description": "Simple web interface for the DSpace CSV Metadata Quality tool.",
+  "author": "Alan Orth",
+  "license": "AGPL-3.0-only",
+  "devDependencies": {
+    "bootstrap": "^5.0.0-beta2",
+    "clean-css-cli": "^4.3.0",
+    "sass": "^1.32.7"
+  },
+  "scripts": {
+    "build:css": "sass --style expanded source/scss/style.scss static/css/style.css.tmp && cleancss --level 1 static/css/style.css.tmp -o static/css/style.min.css",
+    "build": "npm run build:css && npm run clean",
+    "clean": "rm static/css/style.css.tmp static/css/style.css.tmp.map"
+  }
+}
