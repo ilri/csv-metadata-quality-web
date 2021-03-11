@@ -13,6 +13,10 @@
 .git
 .gitignore
 
+# Ignores from local project
+upload
+node_modules
+
 # Python pycache:
 __pycache__/
 # Ignored by the build system
