@@ -1,5 +1,6 @@
 import os
 
+from csv_metadata_quality.version import VERSION as cli_version
 from flask import Flask, abort, redirect, render_template, request, url_for
 from werkzeug.utils import secure_filename
 
@@ -11,7 +12,7 @@ app.config["UPLOAD_PATH"] = "/tmp"
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", cli_version=cli_version)
 
 
 @app.route("/", methods=["POST"])
