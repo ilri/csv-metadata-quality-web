@@ -5,7 +5,15 @@ from base64 import b64decode, b64encode
 
 from ansi2html import Ansi2HTMLConverter
 from csv_metadata_quality.version import VERSION as cli_version
-from flask import Flask, abort, redirect, render_template, request, url_for
+from flask import (
+    Flask,
+    abort,
+    redirect,
+    render_template,
+    request,
+    send_from_directory,
+    url_for,
+)
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
@@ -46,8 +54,10 @@ def process_file(base64slug):
 
     # do we need to use secure_filename again here?
     input_file = os.path.join(app.config["UPLOAD_PATH"], filename)
-    # TODO: write an output file based on the input file name
-    output_file = os.path.join(app.config["UPLOAD_PATH"], "test.csv")
+    # write output file with the same name as the input file plus "-cleaned"
+    output_file = os.path.join(
+        app.config["UPLOAD_PATH"], os.path.splitext(filename)[0] + "-cleaned.csv"
+    )
 
     sys.argv = ["", "-i", input_file, "-o", output_file]
 
@@ -62,11 +72,20 @@ def process_file(base64slug):
     conv = Ansi2HTMLConverter()
     html = conv.convert(results.stdout)
     return render_template(
-        "result.html", cli_version=cli_version, filename=filename, stdout=html
+        "result.html",
+        cli_version=cli_version,
+        filename=filename,
+        stdout=html,
+        base64name=base64slug,
     )
 
-    # I should remember this Flask-specific way to send files to the client
-    # return send_from_directory(app.config["UPLOAD_FOLDER"], filename)
+
+@app.route("/result/<base64slug>/download")
+def result_download(base64slug):
+    filename = b64decode(base64slug).decode("ascii")
+    filename = secure_filename(os.path.splitext(filename)[0] + "-cleaned.csv")
+
+    return send_from_directory(app.config["UPLOAD_PATH"], filename, as_attachment=True)
 
 
 if __name__ == "__main__":
