@@ -2,12 +2,21 @@
 <html lang="en" class="h-100">
   {% include 'head.html' %}
   <body class="d-flex flex-column h-100">
+    {% include 'header.html' %}
     <main class="flex-shrink-0">
       <div class="container">
-        <h1 class="mt-3 fs-2">DSpace CSV Metadata Quality Checker</h1>
-        <p>Processing {{ filename }}</p>
+        <h1 class="mt-3 fs-2">Results</h1>
+        <p>Processing <code>{{ filename }}</code>.</p>
       </div>
     </main>
+
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <blockquote>
+        {{ stdout | safe }}
+        </blockquote>
+      </div>
+    </div>
 
     {% include 'footer.html' %}
   </body>
