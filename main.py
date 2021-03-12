@@ -39,11 +39,9 @@ def upload_file():
     return "No file selected"
 
 
-# TODO: probably use a base64- and URL-encoded version of the filename here so
-# we can allow results to be saved and shared?
 @app.route("/result/<base64slug>")
 def process_file(base64slug):
-    # get filename from base64-encoded filename
+    # get filename from base64-encoded slug
     filename = b64decode(base64slug).decode("ascii")
 
     # do we need to use secure_filename again here?
