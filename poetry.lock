@@ -1,4 +1,12 @@
 [[package]]
+name = "ansi2html"
+version = "1.6.0"
+description = ""
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "appdirs"
 version = "1.4.4"
 description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
@@ -99,8 +107,8 @@ xlrd = "^1.2.0"
 [package.source]
 type = "git"
 url = "https://github.com/ilri/csv-metadata-quality.git"
-reference = "fa84cfa440743ed40295f8c3cd98a27abe396ef2"
-resolved_reference = "fa84cfa440743ed40295f8c3cd98a27abe396ef2"
+reference = "web"
+resolved_reference = "2561636105584038773bd7b75d9c4aa3ecc3292c"
 
 [[package]]
 name = "decorator"
@@ -584,9 +592,13 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7.1"
-content-hash = "b5422ce7e13c87c888889bf6826c779a6d0ba6a1d644d3fdf4c014f50efd2692"
+content-hash = "84349c4e6fbc6267d469e222e84c8f74b638900de9e8c9a42dad20e94984e887"
 
 [metadata.files]
+ansi2html = [
+    {file = "ansi2html-1.6.0-py3-none-any.whl", hash = "sha256:9fa44ca8fb8c417a05a9af1c62e192694b0fcec269ab55f130b5b26e260d0b7c"},
+    {file = "ansi2html-1.6.0.tar.gz", hash = "sha256:0f124ea7efcf3f24f1f9398e527e688c9ae6eab26b0b84e1299ef7f94d92c596"},
+]
 appdirs = [
     {file = "appdirs-1.4.4-py2.py3-none-any.whl", hash = "sha256:a841dacd6b99318a741b166adb07e19ee71a274450e68237b4650ca1055ab128"},
     {file = "appdirs-1.4.4.tar.gz", hash = "sha256:7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"},
