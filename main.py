@@ -1,6 +1,7 @@
 import os
 import subprocess
 import sys
+from base64 import b64decode, b64encode
 
 from ansi2html import Ansi2HTMLConverter
 from csv_metadata_quality.version import VERSION as cli_version
@@ -30,15 +31,21 @@ def upload_file():
 
         uploaded_file.save(os.path.join(app.config["UPLOAD_PATH"], filename))
 
-        return redirect(url_for("process_file", filename=filename))
+        # generate a base64 representation of the filename to use as a slug
+        base64name = b64encode(filename.encode("ascii"))
+
+        return redirect(url_for("process_file", base64slug=base64name))
 
     return "No file selected"
 
 
 # TODO: probably use a base64- and URL-encoded version of the filename here so
 # we can allow results to be saved and shared?
-@app.route("/process/<filename>")
-def process_file(filename):
+@app.route("/result/<base64slug>")
+def process_file(base64slug):
+    # get filename from base64-encoded filename
+    filename = b64decode(base64slug).decode("ascii")
+
     # do we need to use secure_filename again here?
     input_file = os.path.join(app.config["UPLOAD_PATH"], filename)
     # TODO: write an output file based on the input file name
@@ -57,7 +64,7 @@ def process_file(filename):
     conv = Ansi2HTMLConverter()
     html = conv.convert(results.stdout)
     return render_template(
-        "process.html", cli_version=cli_version, filename=filename, stdout=html
+        "result.html", cli_version=cli_version, filename=filename, stdout=html
     )
 
     # I should remember this Flask-specific way to send files to the client
