@@ -6,10 +6,13 @@
     <main class="flex-shrink-0">
       <div class="container py-3">
         <p class="lead">The DSpace CSV Metadata Quality Checker is a pipeline of sanity checks and automated fixes for a number of common issues in metadata files.</p>
-        <p>Select a CSV file to process.</p>
         <form method="POST" action="" enctype="multipart/form-data">
-          <p><input type="file" name="file" accept=".csv"></p>
-          <p><input type="submit" value="Submit"></p>
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Select a CSV file to process</label>
+            <input class="form-control" type="file" id="formFile" name="file" accept=".csv">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
     </main>
