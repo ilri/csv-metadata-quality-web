@@ -18,6 +18,8 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 1024 * 1024
 app.config["UPLOAD_EXTENSIONS"] = [".csv"]
+# the only place we can write to on Google App Engine is /tmp
+# see: https://cloud.google.com/appengine/docs/standard/python3/using-temp-files
 app.config["UPLOAD_PATH"] = "/tmp"
 
 
