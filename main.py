@@ -64,7 +64,7 @@ def process_file(base64slug):
     # run subprocess and capture output as UTF-8 so we get a string instead of
     # bytes for ansi2html
     results = subprocess.run(
-        ["csv-metadata-quality", "-i", input_file, "-o", output_file],
+        ["csv-metadata-quality"] + sys.argv[1:],
         capture_output=True,
         encoding="UTF-8",
     )
