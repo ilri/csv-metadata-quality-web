@@ -55,6 +55,9 @@ def process():
         if "unsafe" in request.form:
             args.append("-u")
 
+        if "experimental" in request.form:
+            args.append("-e")
+
         # run subprocess and capture output as UTF-8 so we get a string instead of
         # bytes for ansi2html
         results = subprocess.run(
