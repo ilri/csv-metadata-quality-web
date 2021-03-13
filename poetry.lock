@@ -107,8 +107,8 @@ xlrd = "^1.2.0"
 [package.source]
 type = "git"
 url = "https://github.com/ilri/csv-metadata-quality.git"
-reference = "46098861ed71cf52cd3f32067ea427146dc1a2bf"
-resolved_reference = "46098861ed71cf52cd3f32067ea427146dc1a2bf"
+reference = "1008acf35e2753d9194755dd186c5428a0c520e6"
+resolved_reference = "1008acf35e2753d9194755dd186c5428a0c520e6"
 
 [[package]]
 name = "decorator"
@@ -606,7 +606,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7.1"
-content-hash = "a3145fc9ae0ec37f6d9035b471d34b1cc2aa6cfdac432e42ec2c5bc7c6975b84"
+content-hash = "fbfb39d76c68d400ad3a6a1aefeb2b36b577b0a36630a6cbdda0b38e2cf8c30d"
 
 [metadata.files]
 ansi2html = [
