@@ -52,6 +52,11 @@ def process():
 
         args = ["-i", input_file, "-o", output_file]
 
+        if "excludeCheckbox" in request.form:
+            if "excludeText" in request.form:
+                args.append("-x")
+                args.append(request.form["excludeText"])
+
         if "unsafe" in request.form:
             args.append("-u")
 

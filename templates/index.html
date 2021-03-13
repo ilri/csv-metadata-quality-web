@@ -14,13 +14,22 @@
 
           <p>Basic options:</p>
 
+          <div class="input-group mb-3">
+            <div class="input-group-text">
+              Skip fields(s)&nbsp;
+              <input class="form-check-input" type="checkbox" id="excludeFieldsCheckbox" name="excludeCheckbox" aria-label="Checkbox for following text input">
+            </div>
+            <input type="text" class="form-control" placeholder="dcterms.subject" id="excludeFieldsText" name="excludeText" aria-label="Text input with checkbox">
+            <div id="excludeHelp" class="form-text">Optionally indicate fields to skip during analysis. Separate multiple fields with a comma, for example: <code>dcterms.issued,dcterms.subject</code>.</div>
+          </div>
+
           <div class="mb-3 form-check form-switch">
             <input class="form-check-input" type="checkbox" id="unsafeCheckbox" name="unsafe">
             <label class="form-check-label" for="unsafeCheckbox" aria-describedby="unsafeHelp">Enable unsafe fixes</label>
             <div id="unsafeHelp" class="form-text">This will remove newlines and perform <a href="https://withblue.ink/2019/03/11/why-you-need-to-normalize-unicode-strings.html" title='When "Zoë" !== "Zoë". Or why you need to normalize Unicode strings'>normalization of Unicode characters</a>. Read more about these <a href="https://github.com/ilri/csv-metadata-quality#unsafe-fixes">unsafe fixes</a>.</div>
           </div>
 
-          <p>Experimental options</p>
+          <p>Experimental options:</p>
 
           <div class="mb-3 form-check form-switch">
             <input class="form-check-input" type="checkbox" id="experimentalCheckbox" name="experimental">
