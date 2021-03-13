@@ -21,6 +21,15 @@
             <div id="excludeHelp" class="form-text">Optionally indicate fields to skip during analysis. Separate multiple fields with a comma, for example: <code>dcterms.issued,dcterms.subject</code>.</div>
           </div>
 
+          <div class="input-group mb-3">
+            <div class="input-group-text">
+              Validate field(s) against AGROVOC&nbsp;
+              <input class="form-check-input" type="checkbox" id="agrovocFieldsCheckbox" name="agrovocCheckbox" aria-label="Checkbox for following text input">
+            </div>
+            <input type="text" class="form-control" placeholder="dcterms.subject" id="agrovocFieldsText" name="agrovocText" aria-label="Text input with checkbox">
+            <div id="agrovocHelp" class="form-text">Optionally indicate fields to validate against <a href="https://agrovoc.uniroma2.it/agrovoc/agrovoc/en/" title="AGROVOC Multilingual Thesaurus">AGROVOC</a>. Separate multiple fields with a comma, for example: <code>dcterms.subject,cg.coverage.country</code>. Note: this can take an extra minute or more depending on your data. If you have a problem please try again and it will generally be faster the second time.</div>
+          </div>
+
           <div class="mb-3 form-check form-switch">
             <input class="form-check-input" type="checkbox" id="unsafeCheckbox" name="unsafe">
             <label class="form-check-label" for="unsafeCheckbox" aria-describedby="unsafeHelp">Enable unsafe fixes</label>

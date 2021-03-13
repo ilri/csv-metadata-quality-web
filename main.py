@@ -57,6 +57,11 @@ def process():
                 args.append("-x")
                 args.append(request.form["excludeText"])
 
+        if "agrovocCheckbox" in request.form:
+            if "agrovocText" in request.form:
+                args.append("-a")
+                args.append(request.form["agrovocText"])
+
         if "unsafe" in request.form:
             args.append("-u")
 
