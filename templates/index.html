@@ -5,11 +5,19 @@
     {% include 'header.html' %}
     <main class="flex-shrink-0">
       <div class="container py-3">
-        <p class="lead">The DSpace CSV Metadata Quality Checker is a pipeline of sanity checks and automated fixes for a number of common issues in metadata files.</p>
+        <p class="lead">The DSpace CSV Metadata Quality Checker is a collection of sanity checks and automated fixes for a number of common issues in metadata files.</p>
         <form method="POST" action="" enctype="multipart/form-data">
           <div class="mb-3">
             <label for="formFile" class="form-label">Select a CSV file to process</label>
             <input class="form-control" type="file" id="formFile" name="file" accept=".csv">
+          </div>
+
+          <p>Options</p>
+
+          <div class="mb-3 form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="unsafeCheckbox" name="unsafe">
+            <label class="form-check-label" for="unsafeCheckbox" aria-describedby="unsafeHelp">Enable unsafe fixes</label>
+            <div id="unsafeHelp" class="form-text">This will remove newlines and perform <a href="https://withblue.ink/2019/03/11/why-you-need-to-normalize-unicode-strings.html" title='When "Zoë" !== "Zoë". Or why you need to normalize Unicode strings'>normalization of Unicode characters</a>. Read more about these <a href="https://github.com/ilri/csv-metadata-quality#unsafe-fixes">unsafe fixes</a>.</div>
           </div>
 
           <button type="submit" class="btn btn-primary">Submit</button>

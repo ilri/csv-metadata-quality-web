@@ -29,7 +29,7 @@ def index():
 
 
 @app.route("/", methods=["POST"])
-def upload_file():
+def process():
     uploaded_file = request.files["file"]
     filename = secure_filename(uploaded_file.filename)
 
@@ -43,42 +43,59 @@ def upload_file():
         # generate a base64 representation of the filename to use as a slug
         base64name = b64encode(filename.encode("ascii"))
 
-        return redirect(url_for("process_file", base64slug=base64name))
+        # do we need to use secure_filename again here?
+        input_file = os.path.join(app.config["UPLOAD_PATH"], filename)
+        # write output file with the same name as the input file plus "-cleaned"
+        output_file = os.path.join(
+            app.config["UPLOAD_PATH"], os.path.splitext(filename)[0] + "-cleaned.csv"
+        )
+
+        args = ["-i", input_file, "-o", output_file]
+
+        if "unsafe" in request.form:
+            args.append("-u")
+
+        # run subprocess and capture output as UTF-8 so we get a string instead of
+        # bytes for ansi2html
+        results = subprocess.run(
+            ["csv-metadata-quality"] + args,
+            capture_output=True,
+            encoding="UTF-8",
+        )
+        # convert the output to HTML using ansi2html
+        conv = Ansi2HTMLConverter()
+        stdout_html = conv.convert(results.stdout)
+
+        # render the results to HTML so we can save them for later and allowing
+        # the user to share the results page without posting the file again. We
+        # decode base64name before sending it to convert it from bytes to str.
+        results_html = render_template(
+            "result.html",
+            cli_version=cli_version,
+            filename=filename,
+            stdout=stdout_html,
+            base64name=base64name.decode("ascii"),
+        )
+        # save results to a file so it's easy to have a saved results page when
+        # we don't know the options a user used to POST the form.
+        results_html_file = os.path.join(
+            app.config["UPLOAD_PATH"], base64name.decode("ascii")
+        )
+        with open(results_html_file, "w") as fh:
+            fh.write(results_html)
+
+        return redirect(url_for("results", base64slug=base64name))
 
     return "No file selected"
 
 
 @app.route("/result/<base64slug>")
-def process_file(base64slug):
-    # get filename from base64-encoded slug
-    filename = b64decode(base64slug).decode("ascii")
+def results(base64slug):
+    results_html_file = os.path.join(app.config["UPLOAD_PATH"], base64slug)
+    with open(results_html_file, "r") as fh:
+        results_html = fh.read()
 
-    # do we need to use secure_filename again here?
-    input_file = os.path.join(app.config["UPLOAD_PATH"], filename)
-    # write output file with the same name as the input file plus "-cleaned"
-    output_file = os.path.join(
-        app.config["UPLOAD_PATH"], os.path.splitext(filename)[0] + "-cleaned.csv"
-    )
-
-    args = ["-i", input_file, "-o", output_file]
-
-    # run subprocess and capture output as UTF-8 so we get a string instead of
-    # bytes for ansi2html
-    results = subprocess.run(
-        ["csv-metadata-quality"] + args,
-        capture_output=True,
-        encoding="UTF-8",
-    )
-    # convert the output to HTML using ansi2html
-    conv = Ansi2HTMLConverter()
-    html = conv.convert(results.stdout)
-    return render_template(
-        "result.html",
-        cli_version=cli_version,
-        filename=filename,
-        stdout=html,
-        base64name=base64slug,
-    )
+    return results_html
 
 
 @app.route("/result/<base64slug>/download")
