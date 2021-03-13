@@ -1,6 +1,5 @@
 import os
 import subprocess
-import sys
 from base64 import b64decode, b64encode
 
 from ansi2html import Ansi2HTMLConverter
@@ -59,12 +58,12 @@ def process_file(base64slug):
         app.config["UPLOAD_PATH"], os.path.splitext(filename)[0] + "-cleaned.csv"
     )
 
-    sys.argv = ["", "-i", input_file, "-o", output_file]
+    args = ["-i", input_file, "-o", output_file]
 
     # run subprocess and capture output as UTF-8 so we get a string instead of
     # bytes for ansi2html
     results = subprocess.run(
-        ["csv-metadata-quality"] + sys.argv[1:],
+        ["csv-metadata-quality"] + args,
         capture_output=True,
         encoding="UTF-8",
     )
