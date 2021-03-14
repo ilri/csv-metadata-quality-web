@@ -127,7 +127,3 @@ def result_download(base64slug):
     filename = secure_filename(os.path.splitext(filename)[0] + "-cleaned.csv")
 
     return send_from_directory(app.config["UPLOAD_PATH"], filename, as_attachment=True)
-
-
-if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=8080, debug=True)
