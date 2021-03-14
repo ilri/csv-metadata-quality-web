@@ -4,3 +4,5 @@ entrypoint: gunicorn -b :$PORT main:app
 handlers:
 - url: /static/css
   static_dir: static/css
+  http_headers:
+    Cache-Control: private
