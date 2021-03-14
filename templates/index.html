@@ -24,14 +24,14 @@
           <div class="input-group mb-3">
             <div class="input-group-text">
               Validate field(s) against AGROVOC&nbsp;
-              <input class="form-check-input" type="checkbox" id="agrovocFieldsCheckbox" name="agrovocCheckbox" aria-label="Checkbox for following text input">
+              <input class="form-check-input" type="checkbox" checked="true" id="agrovocFieldsCheckbox" name="agrovocCheckbox" aria-label="Checkbox for following text input">
             </div>
-            <input type="text" class="form-control" placeholder="dcterms.subject" id="agrovocFieldsText" name="agrovocText" aria-label="Text input with checkbox">
+            <input type="text" class="form-control" value="dcterms.subject" id="agrovocFieldsText" name="agrovocText" aria-label="Text input with checkbox">
             <div id="agrovocHelp" class="form-text">Optionally indicate fields to validate against <a href="https://agrovoc.uniroma2.it/agrovoc/agrovoc/en/" title="AGROVOC Multilingual Thesaurus">AGROVOC</a>. Separate multiple fields with a comma, for example: <code>dcterms.subject,cg.coverage.country</code>. Note: this can take an extra minute or more depending on your data. If you have a problem please try again and it will generally be faster the second time.</div>
           </div>
 
           <div class="mb-3 form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="unsafeCheckbox" name="unsafe">
+            <input class="form-check-input" type="checkbox" checked="true" id="unsafeCheckbox" name="unsafe">
             <label class="form-check-label" for="unsafeCheckbox" aria-describedby="unsafeHelp">Enable unsafe fixes</label>
             <div id="unsafeHelp" class="form-text">This will remove newlines and perform <a href="https://withblue.ink/2019/03/11/why-you-need-to-normalize-unicode-strings.html" title='When "Zoë" !== "Zoë". Or why you need to normalize Unicode strings'>normalization of Unicode characters</a>. Read more about these <a href="https://github.com/ilri/csv-metadata-quality#unsafe-fixes">unsafe fixes</a>.</div>
           </div>
