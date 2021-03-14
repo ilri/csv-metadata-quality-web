@@ -1,4 +1,4 @@
-# Online DSpace CSV Metadata Quality Checker
+# Online DSpace CSV Metadata Quality Checker ![GitHub Actions](https://github.com/ilri/csv-metadata-quality-web/workflows/Build/badge.svg)
 Easy to use, web-based version of the [DSpace CSV Metadata Quality checker](https://github.com/ilri/csv-metadata-quality) application.
 
 <p align="center">
