@@ -68,12 +68,22 @@ def process():
         if "experimental" in request.form:
             args.append("-e")
 
+        # Set cache dir to our upload path so we can tell csv-metadata-quality
+        # to store its requests-cache database there instead of in the current
+        # working directory (we can only write to /tmp on Google App Engine).
+        # Also, make sure to keep our PATH!
+        env = {
+            "REQUESTS_CACHE_DIR": app.config["UPLOAD_PATH"],
+            "PATH": os.environ["PATH"],
+        }
+
         # run subprocess and capture output as UTF-8 so we get a string instead of
         # bytes for ansi2html
         results = subprocess.run(
             ["csv-metadata-quality"] + args,
             capture_output=True,
             encoding="UTF-8",
+            env=env,
         )
         # convert the output to HTML using ansi2html
         conv = Ansi2HTMLConverter()

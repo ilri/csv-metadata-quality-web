@@ -107,8 +107,8 @@ xlrd = "^1.2.0"
 [package.source]
 type = "git"
 url = "https://github.com/ilri/csv-metadata-quality.git"
-reference = "1008acf35e2753d9194755dd186c5428a0c520e6"
-resolved_reference = "1008acf35e2753d9194755dd186c5428a0c520e6"
+reference = "0e9176f0a6f694e85d38bf15c6b80708402bfa8b"
+resolved_reference = "0e9176f0a6f694e85d38bf15c6b80708402bfa8b"
 
 [[package]]
 name = "decorator"
