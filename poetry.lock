@@ -107,8 +107,8 @@ xlrd = "^1.2.0"
 [package.source]
 type = "git"
 url = "https://github.com/ilri/csv-metadata-quality.git"
-reference = "0e9176f0a6f694e85d38bf15c6b80708402bfa8b"
-resolved_reference = "0e9176f0a6f694e85d38bf15c6b80708402bfa8b"
+reference = "10612cf8911f289f140f51fa7186ae4eed4e602f"
+resolved_reference = "10612cf8911f289f140f51fa7186ae4eed4e602f"
 
 [[package]]
 name = "decorator"
@@ -175,7 +175,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "importlib-metadata"
-version = "3.7.2"
+version = "3.7.3"
 description = "Read metadata from Python packages"
 category = "dev"
 optional = false
@@ -606,7 +606,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7.1"
-content-hash = "d1dabfe5cad9e7218ce3f5b45ce39b4823d2262aca7228045af5e5ae6654c7aa"
+content-hash = "179deeadc57404afabd0792cd5e6963d7b3aaf4b3f6a6b4500feb3f4862100c9"
 
 [metadata.files]
 ansi2html = [
@@ -666,8 +666,8 @@ idna = [
     {file = "idna-2.10.tar.gz", hash = "sha256:b307872f855b18632ce0c21c5e45be78c0ea7ae4c15c828c20788b26921eb3f6"},
 ]
 importlib-metadata = [
-    {file = "importlib_metadata-3.7.2-py3-none-any.whl", hash = "sha256:407d13f55dc6f2a844e62325d18ad7019a436c4bfcaee34cda35f2be6e7c3e34"},
-    {file = "importlib_metadata-3.7.2.tar.gz", hash = "sha256:18d5ff601069f98d5d605b6a4b50c18a34811d655c55548adc833e687289acde"},
+    {file = "importlib_metadata-3.7.3-py3-none-any.whl", hash = "sha256:b74159469b464a99cb8cc3e21973e4d96e05d3024d337313fedb618a6e86e6f4"},
+    {file = "importlib_metadata-3.7.3.tar.gz", hash = "sha256:742add720a20d0467df2f444ae41704000f50e1234f46174b51f9c6031a1bd71"},
 ]
 ipython = [
     {file = "ipython-7.21.0-py3-none-any.whl", hash = "sha256:34207ffb2f653bced2bc8e3756c1db86e7d93e44ed049daae9814fed66d408ec"},
