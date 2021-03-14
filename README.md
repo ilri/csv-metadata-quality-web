@@ -2,7 +2,7 @@
 Easy to use, web-based version of the [DSpace CSV Metadata Quality checker](https://github.com/ilri/csv-metadata-quality) application.
 
 <p align="center">
-  <img width="600" alt="Screenshot of csv-metadata-quality-web on Heroku" src="https://raw.githubusercontent.com/ilri/main/csv-metadata-quality-web/screenshot.png">
+  <img width="600" alt="Screenshot of csv-metadata-quality-web on Heroku" src="https://raw.githubusercontent.com/ilri/csv-metadata-quality-web/main/screenshot.png">
 </p>
 
 You can see it live on the Internet at [fierce-ocean-30836.herokuapp.com](https://fierce-ocean-30836.herokuapp.com).
