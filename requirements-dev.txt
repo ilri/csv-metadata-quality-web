@@ -7,7 +7,7 @@ certifi==2020.12.5; python_full_version >= "3.7.1" and python_full_version < "4.
 chardet==4.0.0; python_full_version >= "3.7.1" and python_full_version < "4.0.0"
 click==7.1.2; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 colorama==0.4.4; python_full_version >= "3.7.1" and python_full_version < "4.0.0" and (python_version >= "3.7" and python_full_version < "3.0.0" and sys_platform == "win32" or sys_platform == "win32" and python_version >= "3.7" and python_full_version >= "3.5.0")
-csv-metadata-quality @ git+https://github.com/ilri/csv-metadata-quality.git@1008acf35e2753d9194755dd186c5428a0c520e6 ; python_full_version >= "3.7.1" and python_full_version < "4.0.0"
+csv-metadata-quality @ git+https://github.com/ilri/csv-metadata-quality.git@0e9176f0a6f694e85d38bf15c6b80708402bfa8b ; python_full_version >= "3.7.1" and python_full_version < "4.0.0"
 decorator==4.4.2; python_version >= "3.7" and python_full_version < "3.0.0" or python_full_version >= "3.2.0" and python_version >= "3.7"
 flake8==3.8.4; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.4.0")
 flask==1.1.2; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
