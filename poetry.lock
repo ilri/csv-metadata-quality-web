@@ -606,7 +606,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7.1"
-content-hash = "fbfb39d76c68d400ad3a6a1aefeb2b36b577b0a36630a6cbdda0b38e2cf8c30d"
+content-hash = "d1dabfe5cad9e7218ce3f5b45ce39b4823d2262aca7228045af5e5ae6654c7aa"
 
 [metadata.files]
 ansi2html = [
