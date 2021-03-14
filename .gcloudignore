@@ -16,6 +16,7 @@
 # Ignores from local project
 node_modules
 source
+*.sqlite
 
 # Python pycache:
 __pycache__/
