@@ -10,8 +10,8 @@
     "sass": "^1.32.7"
   },
   "scripts": {
-    "build:css": "sass --style expanded source/scss/style.scss static/css/v1/style.css.tmp && cleancss --level 1 static/css/v1/style.css.tmp -o static/css/v1/style.min.css",
+    "build:css": "sass --style expanded source/scss/style.scss static/css/style.css.tmp && cleancss --level 1 static/css/style.css.tmp -o static/css/style.min.css",
     "build": "npm run build:css && npm run clean",
-    "clean": "rm static/css/v1/style.css.tmp static/css/v1/style.css.tmp.map"
+    "clean": "rm static/css/style.css.tmp static/css/style.css.tmp.map"
   }
 }
