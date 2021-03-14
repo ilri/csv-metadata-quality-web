@@ -1,3 +1,8 @@
+// override some Bootstrap colors. Apparently we need to do this *before* we
+// process Bootstrap.
+$primary: #702D3E;
+$secondary: #E3D7D7;
+
 // selectively import components we need from bootstrap
 // see: node_modules/bootstrap/scss/bootstrap.scss
 @import 'bootstrap';

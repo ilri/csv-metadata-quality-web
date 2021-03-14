@@ -3,8 +3,43 @@
    See:  https://getbootstrap.com/docs/5.0/examples/sticky-footer/
 */
 
+// Add some ILRI colors
+
+$ilri-white: #EBEBEB;
+$ilri-gray: #333;
+
+body {
+  color: $ilri-gray;
+}
+
 .container {
   width: auto;
   max-width: 968px;
   padding: 0 15px;
+}
+
+.bg-dark {
+  color: $ilri-white !important;
+  background-color: $primary !important;
+}
+
+.form-text {
+  color: #666;
+}
+
+.text-white {
+  color: $ilri-white !important;
+}
+
+a, a:hover {
+  color: $primary;
+}
+
+.footer {
+  color: $ilri-gray;
+  background-color: $secondary;
+
+  a, a:hover {
+    color: inherit;
+  }
 }
