@@ -9,7 +9,7 @@ steps:
   commands:
   - id
   - python -V
-  - apt update && apt install -y gcc g++ libicu-dev pkg-config
+  - apt update && apt install -y gcc g++ libicu-dev pkg-config git
   - pip install -r requirements-dev.txt
 
 ---
@@ -23,7 +23,7 @@ steps:
   commands:
   - id
   - python -V
-  - apt update && apt install -y gcc g++ libicu-dev pkg-config
+  - apt update && apt install -y gcc g++ libicu-dev pkg-config git
   - pip install -r requirements-dev.txt
 
 ---
@@ -37,7 +37,7 @@ steps:
   commands:
   - id
   - python -V
-  - apt update && apt install -y gcc g++ libicu-dev pkg-config
+  - apt update && apt install -y gcc g++ libicu-dev pkg-config git
   - pip install -r requirements-dev.txt
 
 # vim: ts=2 sw=2 et
