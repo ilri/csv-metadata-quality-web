@@ -7,7 +7,7 @@ license = "AGPL-3.0-only"
 
 [tool.poetry.dependencies]
 python = "^3.7.1"
-csv-metadata-quality = {git = "https://github.com/ilri/csv-metadata-quality.git", rev = "10612cf8911f289f140f51fa7186ae4eed4e602f"}
+csv-metadata-quality = {git = "https://github.com/ilri/csv-metadata-quality.git", rev = "v0.4.7"}
 Flask = "^1.1.2"
 ansi2html = "^1.6.0"
 gunicorn = "^20.0.4"
