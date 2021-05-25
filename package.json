@@ -5,12 +5,12 @@
   "author": "Alan Orth",
   "license": "AGPL-3.0-only",
   "devDependencies": {
-    "bootstrap": "^5.0.0-beta2",
-    "clean-css-cli": "^4.3.0",
-    "sass": "^1.32.7"
+    "bootstrap": "^5.0.1",
+    "clean-css-cli": "^5.3.0",
+    "sass": "^1.32.13"
   },
   "scripts": {
-    "build:css": "sass --style expanded source/scss/style.scss static/css/style.css.tmp && cleancss --level 1 static/css/style.css.tmp -o static/css/style.min.css",
+    "build:css": "sass --style expanded source/scss/style.scss static/css/style.css.tmp && cleancss -O1 --format breakWith=lf --with-rebase static/css/style.css.tmp -o static/css/style.min.css",
     "build": "npm run build:css && npm run clean",
     "clean": "rm static/css/style.css.tmp static/css/style.css.tmp.map"
   }
