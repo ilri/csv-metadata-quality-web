@@ -10,8 +10,8 @@
     "sass": "^1.32.13"
   },
   "scripts": {
-    "build:css": "sass --style expanded source/scss/style.scss static/css/style.css.tmp && cleancss -O1 --format breakWith=lf --with-rebase static/css/style.css.tmp -o static/css/style.min.css",
+    "build:css": "sass --style expanded source/scss/style.scss csv_metadata_quality_web/static/css/style.css.tmp && cleancss -O1 --format breakWith=lf --with-rebase csv_metadata_quality_web/static/css/style.css.tmp -o csv_metadata_quality_web/static/css/style.min.css",
     "build": "npm run build:css && npm run clean",
-    "clean": "rm static/css/style.css.tmp static/css/style.css.tmp.map"
+    "clean": "rm csv_metadata_quality_web/static/css/style.css.tmp csv_metadata_quality_web/static/css/style.css.tmp.map"
   }
 }
