@@ -11,6 +11,19 @@
 
 You can try [the hosted version](https://fierce-ocean-30836.herokuapp.com) or host it yourself (see below).
 
+## Usage
+Create a Python 3.7+ virtual environment and install the dependencies:
+
+    $ python3 -m venv venv
+    $ source venv/bin/activate
+    $ pip install -r requirements.txt
+
+## Running Locally
+
+    $ gunicorn csv_metadata_quality_web.main
+
+And then visit http://localhost:8000/ in your browser.
+
 ## License
 This work is licensed under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
