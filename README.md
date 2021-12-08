@@ -1,8 +1,12 @@
-# Online DSpace CSV Metadata Quality Checker ![GitHub Actions](https://github.com/ilri/csv-metadata-quality-web/workflows/Build/badge.svg)
-Easy to use, web-based version of the [DSpace CSV Metadata Quality checker](https://github.com/ilri/csv-metadata-quality) application.
-
 <p align="center">
   <img width="600" alt="Screenshot of csv-metadata-quality-web on Heroku" src="screenshot.png">
+</p>
+
+<h1 align="center">Online DSpace CSV Metadata Quality Checker</h1>
+
+<p align="center">
+  <a href="https://github.com/ilri/csv-metadata-quality-web/actions"><img alt="Build Status" src="https://github.com/ilri/csv-metadata-quality-web/workflows/Build/badge.svg"></a>
+  <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
 </p>
 
 You can try [the hosted version](https://fierce-ocean-30836.herokuapp.com) or host it yourself (see below).
