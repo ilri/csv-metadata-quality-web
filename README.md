@@ -12,7 +12,7 @@
 You can try [the hosted version](https://fierce-ocean-30836.herokuapp.com) or host it yourself (see below).
 
 ## Usage
-Create a Python 3.7+ virtual environment and install the dependencies:
+Create a Python 3.8+ virtual environment and install the dependencies:
 
     $ python3 -m venv venv
     $ source venv/bin/activate
