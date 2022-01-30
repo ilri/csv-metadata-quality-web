@@ -6,7 +6,7 @@ authors = ["Alan Orth <alan.orth@gmail.com>"]
 license = "AGPL-3.0-only"
 
 [tool.poetry.dependencies]
-python = "^3.7.1"
+python = "^3.8"
 csv-metadata-quality = {git = "https://github.com/ilri/csv-metadata-quality.git", tag = "v0.5.0"}
 Flask = "^2.0.2"
 ansi2html = "^1.6.0"
