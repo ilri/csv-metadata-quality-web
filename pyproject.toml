@@ -7,15 +7,15 @@ license = "AGPL-3.0-only"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-csv-metadata-quality = {git = "https://github.com/ilri/csv-metadata-quality.git", tag = "v0.5.0"}
-Flask = "^2.0.2"
-ansi2html = "^1.6.0"
-gunicorn = "^20.0.4"
+csv-metadata-quality = {git = "https://github.com/ilri/csv-metadata-quality.git", tag = "v0.6.1"}
+Flask = "^2.2.3"
+ansi2html = "^1.8.0"
+gunicorn = "^20.1.0"
 
 [tool.poetry.dev-dependencies]
-black = "^22.1.0"
-flake8 = "^4.0.1"
-isort = "^5.7.0"
+black = "^23.1.0"
+flake8 = "^6.0.0"
+isort = "^5.12.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
