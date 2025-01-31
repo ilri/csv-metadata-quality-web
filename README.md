@@ -22,6 +22,21 @@ Create a Python 3.10+ virtual environment and install the dependencies:
 
 And then visit http://localhost:8000/ in your browser.
 
+## Running Behind nginx
+
+Set the `SCRIPT_NAME` environment variable to the path you will reverse proxy from:
+
+    $ gunicorn csv_metadata_quality_web.main --env SCRIPT_NAME=/csv-metadata-quality
+
+Then use a configuration snippet like this in nginx:
+
+```
+    location /csv-metadata-quality {
+        include proxy_params;
+        proxy_pass http://127.0.0.1:8000;
+    }
+```
+
 ## License
 This work is licensed under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
