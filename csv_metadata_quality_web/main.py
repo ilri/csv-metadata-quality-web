@@ -107,7 +107,7 @@ def process():
         with open(results_html_file, "w") as fh:
             fh.write(results_html)
 
-        return redirect(url_for("results", base64slug=base64name))
+        return redirect(url_for("results", base64slug=base64name.decode("ascii")))
 
     return "No file selected"
 
