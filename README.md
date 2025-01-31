@@ -10,7 +10,7 @@
 </p>
 
 ## Usage
-Create a Python 3.9+ virtual environment and install the dependencies:
+Create a Python 3.10+ virtual environment and install the dependencies:
 
     $ python3 -m venv venv
     $ source venv/bin/activate
