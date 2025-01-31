@@ -1,6 +1,6 @@
 {
   "name": "csv-metadata-quality-web",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Simple web interface for the DSpace CSV Metadata Quality tool.",
   "author": "Alan Orth",
   "license": "AGPL-3.0-only",
